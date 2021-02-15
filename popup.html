@@ -2,17 +2,70 @@
 <html>
 <head>
   <style>
+    body {
+      width: 50vw;
+      min-width: 800px;
+      height: 80vh;
+      margin: 5px;
+    }
     button {
       height: 30px;
       width: 30px;
       outline: none;
     }
 
+    #image-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 100px;
+    }
+
+    img.thumbnail {
+      width: 200px;
+    }
+
+    #header {
+      margin: 5px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
   </style>
+  <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
-<button id="changeColor"></button>
-<div id='message'>Injecting Script....</div>
+<div id="header">
+
+  <div>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="filter-url-containers" class="col-sm-2 control-label">URL contains</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="filter-url-containers" placeholder="">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input id="btn-download" class="btn btn-default" value="Download">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="message"></div>
+</div>
+<div id="image-container">
+
+</div>
+
+
+<template id="item">
+  <img class="thumbnail"/>
+  <div class="text"></div>
+</template>
+
+<script src="js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="popup.js"></script>
 </body>
 </html>
