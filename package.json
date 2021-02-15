@@ -1,0 +1,7 @@
+{
+  "name": "image-batch-donwloader",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Lawrence Ching",
+  "license": "MIT"
+}
