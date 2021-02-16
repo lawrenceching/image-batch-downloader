@@ -1,9 +1,9 @@
 {
   "name": "Image Batch Downloader",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Download image in batch",
   "manifest_version": 2,
-  "permissions": ["declarativeContent", "storage", "activeTab", "downloads", "tabs", "<all_urls>"],
+  "permissions": ["declarativeContent", "storage", "activeTab", "downloads"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false

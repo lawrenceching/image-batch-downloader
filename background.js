@@ -1,3 +1,10 @@
+port = chrome.extension.connect();
+port.onDisconnect.addListener(function (event) {
+  console.log('Port disconnected: ', event);
+  // Happened immediately before adding the proper backend setup.
+  // With proper backend setup, allows to determine the extension being disabled or unloaded.
+});
+
 function guessFileName(url) {
   const words = url.split('/');
   const filename = words[words.length - 1];

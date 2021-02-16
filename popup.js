@@ -25,6 +25,13 @@ function refresh() {
 
 }
 
+port = chrome.extension.connect();
+port.onDisconnect.addListener(function (event) {
+  console.log('Port disconnected: ', event);
+  // Happened immediately before adding the proper backend setup.
+  // With proper backend setup, allows to determine the extension being disabled or unloaded.
+});
+
 chrome.runtime.onMessage.addListener(function(request, sender) {
   if (request.action === "getImageUrls") {
     cache.images = request.images;
