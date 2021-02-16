@@ -8,16 +8,23 @@ function resolveUrl(url) {
 
 chrome.runtime.sendMessage({
   action: "getImageUrls",
-  urls: (() => {
-    const images = document.querySelectorAll("img");
-    const urls = [];
-    for (let i = 0; i < images.length; ++i) {
-      const img = images[i];
+  images: (() => {
+    const imgElements = document.querySelectorAll("img");
+    const images = [];
+    for (let i = 0; i < imgElements.length; ++i) {
+      const img = imgElements[i];
       const url = img.getAttribute("src");
-      urls.push(resolveUrl(url));
+
+      images.push({
+        url: resolveUrl(url),
+        naturalHeight: img.naturalHeight,
+        naturalWidth: img.naturalWidth,
+        clientHeight: img.clientHeight,
+        clientWidth: img.clientWidth
+      });
     }
 
-    console.log('Detected urls:', urls);
-    return urls;
+    console.log('Detected images:', images);
+    return images;
   })()
 });
