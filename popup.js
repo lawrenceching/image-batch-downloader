@@ -126,9 +126,9 @@ function onWindowLoad() {
 
   const message = document.querySelector('#message');
   if(!!cache.debug) {
-    message.show()
+    message.style.display = '';
   } else {
-    message.hide()
+    message.style.display = 'none';
   }
 
 
